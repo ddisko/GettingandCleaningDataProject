@@ -1,5 +1,5 @@
 ---
-title: "Code Book"
+title: "Read Me"
 author: "David Disko"
 date: "October 25, 2014"
 output: html_document
@@ -14,7 +14,7 @@ Source Data
 The data used in this project can be found at The UCI Machine Learning Repository
 http://archive.ics.uci.edu/ml/
 
-The source data for this project
+The specific source data for this project
 https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 Data Set Information (quoted from the above site)
@@ -33,32 +33,42 @@ A 561-feature vector with time and frequency domain variables.
 Its activity label.
 An identifier of the subject who carried out the experiment.
 
-Part 1. Merge the training and the test sets to create one data set.
+Data Reduction and Condensation Process (per course assignment)
+
+Part 1. Merge the training and the test files to create one data set.
 
 After setting the source directory for the files, read into tables the data located in
 
 features.txt
+
 activity_labels.txt
+
 subject_train.txt
+
 x_train.txt
+
 y_train.txt
+
 subject_test.txt
+
 x_test.txt
+
 y_test.txt
-Assign column names and merge to create one data set.
+
+Assign descriptive column names and merge to create one data set.
 
 Part 2. Extract only the measurements on the mean and standard deviation for each measurement.
 
-Create a logcal vector that contains TRUE values for the ID, mean and stdev columns and FALSE values for the others. Subset this data to keep only the necessary columns.
+Create a logcal vector that contains TRUE values for the ID, mean and stdev columns and FALSE values for the others. Reduce this data to keep only the necessary columns.
 
 Part 3. Use descriptive activity names to name the activities in the data set
 
-Merge data subset with the activityType table to cinlude the descriptive activity names
+Merge the data reduction with the activityType table to inlude the descriptive activity names
 
-Part 4. Appropriately label the data set with descriptive activity names.
+Part 4. Appropriately label the data set with descriptive activity names and clean up the data labels.
 
-Clean up the data labels.
+Part 5. Create a second, independent tidy data set with the mean and standard deviation of each variable for each activity and each subject.
 
-Part 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject.
+Per the project instructions, we need to produce a data file (flat text format, row.name set to FALSE) with the average and standard deviation of each variable for each activity and subject and activity identification.
 
-Per the project instructions, we need to produce only a data set with the average of each veriable for each activity and subject with the row.name set to FALSE.
+The resultant file (tidyData.txt) is approximately 63kb in size and can be opened with numerous software tools and is platform agnostic.
